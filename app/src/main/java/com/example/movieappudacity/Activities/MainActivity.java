@@ -133,12 +133,13 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onChanged(List<Favourite> favourites)
             {
+
                 List<Model> models=new ArrayList<>();
                 for (int i=0;i<favourites.size();i++)
                 {
                     Model model=new Model(favourites.get(i).getOriginalTitle(),favourites.get(i).getMovieImage()
                     ,favourites.get(i).getUserRating(),favourites.get(i).getRelaseDate(),favourites.get(i).getOverView()
-                    ,favourites.get(i).getMovieId());
+                    ,favourites.get(i).id());
 
                     models.add(model);
                 }

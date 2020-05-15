@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase;
 import com.example.movieappudacity.DAO.MovieDao;
 import com.example.movieappudacity.Models.Favourite;
 
-@Database(entities = {Favourite.class},version = 2,exportSchema = false)
+@Database(entities = {Favourite.class},version = 3,exportSchema = false)
 public abstract class MovieDatabase extends RoomDatabase
 {
     private static final String LOG_TAG = MovieDatabase.class.getSimpleName();

@@ -7,27 +7,28 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "Movie")
 public class Favourite
 {
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @PrimaryKey
+    @NonNull
+    private String id;
     private String originalTitle;
     private String movieImage;
     private String userRating;
     private String RelaseDate;
     private String overView;
-    private String movieId;
 
 
 
 
 
-    public Favourite(String originalTitle,String movieImage,String userRating,String RelaseDate,String overView,String movieId)
+
+    public Favourite(String originalTitle,String movieImage,String userRating,String RelaseDate,String overView,String id)
     {
         this.originalTitle=originalTitle;
         this.movieImage=movieImage;
         this.userRating=userRating;
         this.RelaseDate=RelaseDate;
         this.overView=overView;
-        this.movieId=movieId;
+        this.id=id;
     }
 
     public String getOriginalTitle() {
@@ -70,27 +71,27 @@ public class Favourite
         this.overView = overView;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-//    public String id() {
+//    public int getId() {
 //        return id;
 //    }
 //
-//    public void setMovieid(String id) {
+//    public void setId(int id) {
 //        this.id = id;
 //    }
-public String getMovieId() {
-    return movieId;
-}
-
-    public void setMovieId(String movieId) {
-        this.movieId = movieId;
+    public String id() {
+        return id;
     }
+
+    public void setMovieid(String id) {
+        this.id = id;
+    }
+//public String getMovieId() {
+//    return movieId;
+//}
+//
+//    public void setMovieId(String movieId) {
+//        this.movieId = movieId;
+//    }
 
 
 }
