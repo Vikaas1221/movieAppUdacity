@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/itemLayout"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="90dp"
+        android:src="@android:drawable/ic_media_play"
+        android:id="@+id/play"
+        android:layout_height="90dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_toRightOf="@+id/play"
+        android:text="Trailer 1"
+        android:id="@+id/trailernumber"
+        android:layout_marginLeft="12dp"
+        android:layout_centerVertical="true"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@+id/play"
+        android:background="@android:color/black"
+        android:layout_height="1dp"/>
+</RelativeLayout>
