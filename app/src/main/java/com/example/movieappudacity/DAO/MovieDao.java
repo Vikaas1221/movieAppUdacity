@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.example.movieappudacity.Models.Favourite;
@@ -17,7 +18,7 @@ public interface MovieDao
 {
     @Query("Select * from Movie order by id")
     LiveData<List<Favourite>> loadAllMovies();
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Favourite favourite);
 
     @Delete

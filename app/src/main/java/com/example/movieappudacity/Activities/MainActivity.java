@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity
         progressBar=findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
         fetchMovies("popular");
+        setTitle(getString(R.string.app_name)+"-Popular Movies");
 
 
     }
@@ -103,9 +104,6 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onChanged(ArrayList<Model> models)
             {
-             //   arrayList.clear();
-                Model model=models.get(1);
-                Log.d("dataFromRepo",""+models.get(1)+"/"+model.getOriginalTitle());
                 if (models.size()==0)
                 {
                     Toast.makeText(getApplicationContext(),"No data found",Toast.LENGTH_SHORT).show();
@@ -134,6 +132,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onChanged(List<Favourite> favourites)
             {
+                models.clear();
                 for (int i=0;i<favourites.size();i++)
                 {
                     Model model=new Model(favourites.get(i).getOriginalTitle(),favourites.get(i).getMovieImage()

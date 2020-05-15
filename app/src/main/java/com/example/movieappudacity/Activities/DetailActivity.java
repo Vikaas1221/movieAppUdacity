@@ -136,6 +136,7 @@ public class DetailActivity extends AppCompatActivity
             {
                 if (isFav)
                 {
+
                     mDb.movieDao().deleteTask(favourite);
                 }
                 else
