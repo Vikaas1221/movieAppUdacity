@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -61,7 +62,13 @@ public class DetailActivity extends AppCompatActivity
             public void run()
             {
                 final Favourite fmov = mDb.movieDao().searchMovie(model.getOriginalTitle());
-                setFavorite((fmov != null)? true : false);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        setFavorite((fmov != null)? true : false);
+                    }
+                });
+
             }
         });
 
@@ -137,7 +144,7 @@ public class DetailActivity extends AppCompatActivity
                 if (isFav)
                 {
 
-                    mDb.movieDao().deleteTask(favourite);
+                    mDb.movieDao().deleteMovie(model.getOriginalTitle());
                 }
                 else
                 {
@@ -169,6 +176,5 @@ public class DetailActivity extends AppCompatActivity
             addbutton.setImageResource(R.drawable.ic_favorite_border_black_24dp);
         }
     }
-
 
 }

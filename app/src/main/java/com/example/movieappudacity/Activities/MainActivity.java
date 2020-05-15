@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity
         progressBar=findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
         fetchMovies("popular");
+        Log.d("firstasdf","in oncreate ");
         setTitle(getString(R.string.app_name)+"-Popular Movies");
 
 
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity
     }
     public void getFavouriteMovies()
     {
-        List<Model> models=new ArrayList<>();
+
         movieRecyclerview.setLayoutManager(new GridLayoutManager(MainActivity.this,2));
         movieRecyclerview.setHasFixedSize(true);
         viewmodel= ViewModelProviders.of(this).get(Viewmodel.class);
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onChanged(List<Favourite> favourites)
             {
-                models.clear();
+                List<Model> models=new ArrayList<>();
                 for (int i=0;i<favourites.size();i++)
                 {
                     Model model=new Model(favourites.get(i).getOriginalTitle(),favourites.get(i).getMovieImage()
